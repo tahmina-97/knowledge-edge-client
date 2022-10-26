@@ -11,6 +11,18 @@ const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
     const style = { fontSize: "180%" };
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error('error', error);
+            })
+    }
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
@@ -24,7 +36,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavLink to='/' className='text-white text-decoration-none fs-5 me-3'>Courses</NavLink>
-                        <NavLink to='/faq' className='text-white text-decoration-none fs-5 me-3'>FAQ</NavLink>
+                        <NavLink to='/faq' className='text-white text-decoration-none fs-5 me-3'>FAQs</NavLink>
                         <NavLink to='/blog' className='text-white text-decoration-none fs-5'>Blog</NavLink>
                     </Nav>
                     <Nav>
@@ -32,7 +44,7 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <Button variant="outline-light" className='mx-2'>Log Out</Button>
+                                        <Button onClick={handleLogOut} variant="outline-light" className='mx-2'>Log Out</Button>
                                     </>
                                     :
                                     <>

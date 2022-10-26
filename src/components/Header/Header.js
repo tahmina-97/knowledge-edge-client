@@ -40,7 +40,7 @@ const Header = () => {
                         <NavLink to='/blog' className='text-white text-decoration-none fs-5'>Blog</NavLink>
                     </Nav>
                     <Nav>
-                        <>
+                        <div className='mx-auto'>
                             {
                                 user?.uid ?
                                     <>
@@ -53,12 +53,12 @@ const Header = () => {
                                     </>
                             }
 
-                        </>
-                        <Nav.Link href="#deets">
+                        </div>
+                        <Nav.Link className='ms-auto' href="#deets">
                             {user?.photoURL ?
                                 <Image roundedCircle src={user?.photoURL} title={user.displayName} style={{ height: '30px' }} ></Image>
                                 :
-                                <FaUser />
+                                <FaUser style={style} />
                             }
                         </Nav.Link>
                     </Nav>

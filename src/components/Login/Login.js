@@ -92,9 +92,9 @@ const Login = () => {
             </Form>
 
 
-            <ButtonGroup vertical className='d-flex justify-content-center mx-auto w-25'>
-                <Button onClick={handleGoogleSignIn} variant="outline-success mb-2 px-5 rounded"> <FaGoogle></FaGoogle>Google Login</Button>
-                <Button onClick={handleGithubSignIn} variant="outline-secondary px-5 mb-2 rounded"> <FaGithub></FaGithub>Github Login</Button>
+            <ButtonGroup vertical className='d-flex justify-content-center mx-auto w-50 mt-3'>
+                <Button onClick={handleGoogleSignIn} variant="outline-success mb-2 px-5 rounded"><FaGoogle></FaGoogle> Google Login</Button>
+                <Button onClick={handleGithubSignIn} variant="outline-secondary px-5 mb-2 rounded"> <FaGithub></FaGithub> Github Login</Button>
             </ButtonGroup>
 
             <p className='text-center'>New to this website? <Link to='/register'>Create New Account</Link> </p>

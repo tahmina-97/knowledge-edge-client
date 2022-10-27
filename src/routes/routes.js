@@ -45,8 +45,8 @@ export const router = createBrowserRouter([
                 element: <CoursePerCategory></CoursePerCategory>
             },
             {
-                path: '/course/:id',
-                // loader: ({ params }) => fetch(`https://knowledge-dot-server.vercel.app/course/${params.id}`),
+                path: '/premium/:id',
+                loader: ({ params }) => fetch(`https://knowledge-dot-server.vercel.app/course/${params.id}`),
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
             },
 

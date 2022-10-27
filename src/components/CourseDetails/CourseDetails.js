@@ -25,7 +25,7 @@ const CourseDetails = () => {
                 <div class="card-body">
                     <h5 class="card-title">Course: {course_name}</h5>
                     <p class="card-text">{details}</p>
-                    <Link className='btn btn-primary' to='/'>Get Premium Access</Link>
+                    <Link className='btn btn-primary' to={`/course/${id}`}>Get Premium Access</Link>
                 </div>
             </div>
         </Container>

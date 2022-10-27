@@ -14,7 +14,9 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path: '/', element: <Courses></Courses>
+                path: '/',
+                loader: () => fetch('https://knowledge-dot-server.vercel.app/courses'),
+                element: <Courses></Courses>
             },
             {
                 path: '/faq', element: <Faq></Faq>
@@ -27,7 +29,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/register', element: <Register></Register>
-            }
+            },
+
         ]
     }
 ])

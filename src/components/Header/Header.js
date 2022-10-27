@@ -6,9 +6,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Button, Image } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { useState } from 'react';
 
 const Header = () => {
 
+    const { darkMode, setDarkMode } = useState(false);
     const { user, logOut } = useContext(AuthContext);
     const style = { fontSize: "180%" };
 
@@ -63,6 +65,10 @@ const Header = () => {
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+
+                </div>
             </Container>
         </Navbar>
     );

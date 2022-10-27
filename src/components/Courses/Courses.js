@@ -1,13 +1,25 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import CategorySection from '../CategorySection/CategorySection';
+import CourseSection from '../CourseSection/CourseSection';
 
 const Courses = () => {
+    const courses = useLoaderData();
     return (
-        <div>
-            <h1>
-                from courses
-            </h1>
+        <Container>
+            <Row>
+                <Col lg={3}>
+                    <CategorySection></CategorySection>
+                </Col>
+                <Col>
+                    <CourseSection
+                        courses={courses}
+                    ></CourseSection>
+                </Col>
 
-        </div>
+            </Row>
+        </Container>
     );
 };
 

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog/Blog";
+import CourseDetails from "../components/CourseDetails/CourseDetails";
 import Courses from "../components/Courses/Courses";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Faq from "../components/Faq/Faq";
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/register', element: <Register></Register>
+            },
+            {
+                path: '/course/:id',
+                loader: ({ params }) => fetch(`https://knowledge-dot-server.vercel.app/course/${params.id}`),
+                element: <CourseDetails></CourseDetails>
             },
 
         ]

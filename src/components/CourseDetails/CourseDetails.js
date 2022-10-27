@@ -28,9 +28,6 @@ const CourseDetails = () => {
                     <Link className='btn btn-primary' to='/'>Get Premium Access</Link>
                 </div>
             </div>
-
-
-
         </Container>
     );
 };
